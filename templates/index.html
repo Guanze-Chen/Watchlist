@@ -3,13 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>{{name}}'s Watchlist</title>
+    <title>{{user.name}}'s Watchlist</title>
+    <link rel="icon" href="{{url_for('static',filename='images/flask.png')}}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
 </head>
 
 <body>
-    <h2>{{name}}'s Watchlist</h2>
+    <h2>{{user.name}}'s Watchlist</h2>
     <p>{{movies|length}} Titles</p>
-    <ul>
+    <img class="flask" src="{{url_for('static',filename='images/flask.png')}}" alt="flask">
+    <ul class="movie-list">
         {% for movie in movies %}
         <li>{{movie.title}} -- {{movie.year}}</li>
         {% endfor %}
