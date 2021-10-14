@@ -1,10 +1,8 @@
 import unittest
-from unittest import result
-from flask.helpers import send_file
-from flask.wrappers import Response
 
-from flask_sqlalchemy import SQLAlchemy
-from app import Movie, app, db, Movie, User, forge, initdb
+from watchlist import app, db
+from watchlist.models import Movie,User 
+from watchlist.commands import forge, initdb
 
 
 class WatchlistTestCase(unittest.TestCase):
